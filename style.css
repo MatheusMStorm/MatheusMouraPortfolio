@@ -14,6 +14,10 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -47,24 +51,25 @@ header {
 }
 
 .menu .botoes {
-    margin-right: 50px;
-}
-
-.menu .botoes ul {
     display: flex;
-    gap: 50px;
+    gap: 20px;
     list-style: none;
+    margin-right: 50px;
+    margin-left: 50px;
+    font-size: 20px;
 }
 
-.menu .botoes ul li a {
-    font-size: 18px;
-    color: #fff;
+.menu .botoes a {
     text-decoration: none;
-    font-weight: bold;
+    color: #fff;
 }
 
-.menu .botoes ul li a:hover {
+.menu .botoes a:hover {
     text-decoration: underline;
+}
+
+#menu-toggle {
+    display: none;
 }
 
 main {
@@ -255,93 +260,37 @@ footer {
 }
 
 @media (max-width: 768px) {
-    #home .imagem img {
-        width: 200px;
-        height: 200px;
+    #menu-toggle {
+        display: block;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color:#fff;
+        cursor: pointer;
     }
 
-    #home .text h2 {
-        font-size: 30px;
-    }
-
-    #home .text p {
-        font-size: 16px;
-    }
-
-    #tecnologias h3 {
-        font-size: 28px;
-    }
-
-    #tecnologias ul {
-        gap: 10px;
-    }
-
-    #tecnologias ul li img {
-        width: 40px;
-        height: 40px;
-    }
-
-    #projetos {
-        gap: 10px;
-        padding: 20px 0;
-    }
-    
-    #projetos h2 {
-        font-size: 28px;
-    }
-
-    #projetos .projeto {
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100%;
+        background-color: #222;
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 15px;
+        transition: left 0.3s ease-in-out;
     }
 
-    #projetos .projeto .nome {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    #projetos .projeto .nome img {
-        width: 100px;
-        height: 100px;
-    }
-
-    #projetos .projeto .nome h3 {
+    nav a {
+        color: #fff;
+        text-decoration: none;
         font-size: 18px;
     }
 
-    #projetos .projeto .descricao {
-        font-size: 16px;
-    }
-
-    #projetos .projeto .descricao p {
-        text-align: justify;
-    }
-
-    #projetos .projeto .descricao button {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    #contato {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    #contato h2 {
-        font-size: 24px;
-    }
-
-    #contato ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    #contato ul li img {
-        width: 30px;
-        height: 30px;
+    nav.open {
+        left: 0;
     }
 }

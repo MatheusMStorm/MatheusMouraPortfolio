@@ -5,3 +5,10 @@ elementosProjeto.forEach(function(elemento) {
         elemento.classList.toggle('ativo');
     });
 });
+
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', function() {
+    nav.classList.toggle('open');
+});
