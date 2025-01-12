@@ -7,8 +7,13 @@ elementosProjeto.forEach(function(elemento) {
 });
 
 const menuToggle = document.getElementById('menu-toggle');
-const nav = document.querySelector('nav');
+const menuClose = document.getElementById('menu-close');
+const botoes = document.querySelector('.menu .botoes');
 
 menuToggle.addEventListener('click', function() {
-    nav.classList.toggle('open');
+    botoes.classList.add('open');
+});
+
+menuClose.addEventListener('click', function() {
+    botoes.classList.remove('open');
 });

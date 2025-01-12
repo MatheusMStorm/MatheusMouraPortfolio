@@ -72,6 +72,10 @@ header {
     display: none;
 }
 
+#menu-close {
+    display: none;    
+}
+
 main {
     padding: 30px;
 }
@@ -260,16 +264,20 @@ footer {
 }
 
 @media (max-width: 768px) {
-    #menu-toggle {
+    .menu #menu-toggle {
         display: block;
         font-size: 24px;
         background: none;
         border: none;
-        color:#fff;
+        color: #fff;
         cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
     }
 
-    nav {
+    .menu .botoes {
         position: fixed;
         top: 0;
         left: -100%;
@@ -282,15 +290,66 @@ footer {
         padding: 20px;
         gap: 15px;
         transition: left 0.3s ease-in-out;
+        z-index: 999;
     }
 
-    nav a {
+    .menu .botoes a {
         color: #fff;
         text-decoration: none;
         font-size: 18px;
     }
 
-    nav.open {
+    .menu .botoes.open {
         left: 0;
+    }
+
+    .menu .botoes #menu-close {
+        display: block;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        align-self: flex-end;
+        margin-bottom: 20px; 
+    }
+
+    .menu .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu .logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .menu .logo h1 {
+        display: none;
+    }
+
+    section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #home .imagem {
+        padding-left: 90px;
+        margin-bottom: 20px;
+    }
+
+    #home .text {
+        text-align: center;
+    }
+
+    #tecnologias ul {
+        flex-wrap: wrap;
+    }
+
+    #tecnologias ul li img {
+        width: 70px;
+        height: 70px;
     }
 }
